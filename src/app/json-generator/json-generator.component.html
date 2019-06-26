@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header text-center font-weight-bold text-uppercase">
+        Input table
+    </div>
+    <div class="card-body">
+        <span class="float-right mb-m mr-2">
+            <a class="text-success" (click)="addRow()">
+                ADD
+            </a>
+        </span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+            <tr>
+                <th class="text-center">Key</th>
+                <th class="text-center">Value</th>
+                <th class="text-center">Remove</th>
+            </tr>
+            <tr let id = index; *ngFor="let prop of propertyList">
+                <td>
+                    <span contenteditable="true" (blur)="updateValue($event, prop, 'KEY')">{{prop.key}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (blur)="updateValue($event, prop, 'VALUE')">{{prop.value}}</span>
+                </td>
+                <td>
+                    <span class="table-remove">
+                        <button type="button" class="my-0 btn btn-danger btn-rounded btn-sm" (click)="removeRow(prop)">REMOVE</button>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

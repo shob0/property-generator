@@ -1,0 +1,48 @@
+<mat-sidenav-container class="drawer-container">
+  <mat-sidenav #drawer class="example-sidenav sidenav-div" opened>
+    <div>
+      <div id="header-drawer-div" class="sidenav-div ">OPTIONS</div>
+    </div>
+    <div>
+      <div class="menu-item sidenav-div ">
+        <a>Properties</a></div>
+    </div>
+    <div>
+      <div class="menu-item sidenav-div ">
+        <a>Cetificate</a></div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="text-align:center" id="header">
+      <a id="side-menu" (click)="drawer.toggle()">
+        <mat-icon>reorder</mat-icon>
+      </a>
+      <div style="display: inline-block">
+        <h1>
+          Welcome to {{ title }}!
+        </h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row component-header">
+        <h3>Please Provide key and Value pairs.</h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-1"></div>
+        <div style="margin-top: 2em">
+          <app-json-generator></app-json-generator>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="inner" style="float: left"><button class="btn"
+          (click)="beginFileCreationProcess('JSON');">JSON</button>
+      </div>
+      <!-- <div class="inner" style="margin-left: 30%;"><button class="btn" (click)="createFile('XML');">XML</button></div> -->
+      <div class="inner" style="float: right;"><button class="btn"
+          (click)="beginFileCreationProcess('PROP');">Properties</button></div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<router-outlet></router-outlet>
